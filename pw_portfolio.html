@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sam's portfolio</title>
+  <link rel="stylesheet" href="pw.css"></link>
+  <link rel="shortcut icon" type="image/x-icon" href="circle-cropped.png"></link>
+</head>
+<body>
+
+  <p id = "title">visual art</p>
+
+    <div id = "row1">
+      <div class="container"  onclick = "goSunset1()">
+        <img src="IMG_4139square.jpg" alt="Avatar" class="image"></img>
+        <div class="middle">
+          <div class="text">sunset at madeira beach<br>pastels<br>aug 25 2019</div>
+        </div>
+      </div>
+
+      <div class="container" onclick = "goSunset2()">
+        <img src="IMG_4154square.jpg" alt="Avatar" class="image"></img>
+        <div class="middle">
+          <div class="text">sunset at madeira beach<br>pastels<br>aug 25 2019</div>
+        </div>
+      </div>
+
+      <div class="container" onclick = "goMaverick()">
+        <img src="IMG_4150square.jpg" alt="Avatar" class="image"></img>
+        <div class="middle">
+          <div class="text">maverick tree<br>pastels<br>aug 26 2019</div>
+        </div>
+      </div>
+
+      <div class="container" onclick = "goFirepit()">
+        <img src="IMG_3004square.jpg" alt="Avatar" class="image"></img>
+        <div class="middle">
+          <div class="text">night firepit<br>pastels<br>aug 26 2019</div>
+        </div>
+      </div>
+    </div>
+
+    <div id = "row2">
+      <div class="container" onclick = "goFirepit2()">
+        <img src="IMG_3005square.jpg" alt="Avatar" class="image"></img>
+        <div class="middle">
+          <div class="text">day firepit<br>pastels<br>aug 26 2019</div>
+        </div>
+      </div>
+
+      <div class="container" onclick = "goDeer()">
+        <img src="deerpaintsquare.png" alt="Avatar" class="image"></img>
+        <div class="middle">
+          <div class="text">portrait of a deer<br>photoshop<br>2019</div>
+        </div>
+      </div>
+
+      <div class="container" onclick = "goMacbeth()">
+        <img src="macbeth_comic_coversquare.png" alt="Avatar" class="image"></img>
+        <div class="middle">
+          <div class="text">macbeth comics<br>photoshop<br>2019</div>
+        </div>
+      </div>
+
+      <div class="container" onclick = "goPortrait()">
+        <img src="oil_portrait.png" alt="Avatar" class="image"></img>
+        <div class="middle">
+          <div class="text">portrait of a woman<br>photoshop<br>2019</div>
+        </div>
+      </div>
+    </div>
+
+  <p id = "title">coding projects</p>
+    <div class="container" id = "junkio" onclick = "goJunkIo()">
+      <img src="fishicon.png" alt="Avatar" class="image"></img>
+      <div class="middle">
+        <div class="text">JUNK.IO<br>group project<br>aug 2019</div>
+      </div>
+    </div>
+
+    <div class="container" onclick = "goHome()">
+      <img src="laptop.jpeg" alt="Avatar" class="image"></img>
+      <div class="middle">
+        <div class="text">this very website!<br>aug 2019</div>
+      </div>
+    </div>
+
+    <div class="container" onclick = "goBBL()">
+      <img src="bblicon.png" alt="Avatar" class="image"></img>
+      <div class="middle">
+        <div class="text">bbl name generator<br>jul 2019</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="blank.png" alt="Avatar" class="image" ></img>
+      <div class="middle">
+        <div class="text">coming soon!</div>
+      </div>
+    </div>
+
+  <p id = "title">writing</p>
+    <div class="container">
+      <img src="blank.png" alt="Avatar" class="image" ></img>
+      <div class="middle">
+        <div class="text">coming soon!</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="blank.png" alt="Avatar" class="image" ></img>
+      <div class="middle">
+        <div class="text">coming soon!</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="blank.png" alt="Avatar" class="image" ></img>
+      <div class="middle">
+        <div class="text">coming soon!</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <img src="blank.png" alt="Avatar" class="image" ></img>
+      <div class="middle">
+        <div class="text">coming soon!</div>
+      </div>
+    </div>
+
+  <p id = "navbar">
+    <button id = "navin" onclick = "goHome()">home</button>
+    <button id = "navin" onclick = "goPortfolio()">portfolio</button>
+    <button id = "navin" onclick = "goContact()">contact</button>
+  </p>
+
+  <script type="text/javascript">
+
+    var redirects = {
+      junkio: "https://junkgame.github.io"
+    }
+
+    function goSunset1() {
+      window.location.href = "IMG_4139.jpg";
+    }
+
+    function goSunset2() {
+      window.location.href = "IMG_4154.jpg";
+    }
+
+    function goMaverick() {
+      window.location.href = "IMG_4150.jpg";
+    }
+
+    function goFirepit() {
+      window.location.href = "IMG_3004.jpg";
+    }
+
+    function goFirepit2() {
+      window.location.href = "IMG_3005.jpg";
+    }
+
+    function goJunkIo() {
+      window.location.href = "https://junkgame.github.io";
+    }
+
+    function goDeer() {
+      window.location.href = "deerpaint.png";
+    }
+
+    function goMacbeth() {
+      window.location.href = "macbeth_comic_cover.png";
+    }
+
+    function goPortrait() {
+      window.location.href = "oil_portrait.png";
+    }
+
+    function goBBL() {
+      window.location.href = "https://bblname.github.io";
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    function goPortfolio() {
+      window.location.href = "pw_portfolio.html";
+    }
+
+    function goContact() {
+      window.location.href = "pw_contact.html";
+    }
+  </script>
+
+</body>
+</html>
