@@ -1,112 +1,104 @@
-body {
-  background-color: rgb(245, 245, 245);
-}
-
-.tabs {
+#title {
   text-align: center;
-  font-size: 30;
-  font-family: "Lucida Console", Monaco, monospace;
+  margin-top: 2%;
+  font-size: 2vw;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   color: black;
-  padding-top: 20px;
+  display:inline-block;
+  margin-left: 25%;
 }
 
-a { color: rgb(176,176,176) } /* Globally */
-
-/* Each state */
-
-a:visited { text-decoration: none; color: rgb(176, 176, 176); }
-a:hover { text-decoration: none; color:black; }
-a:focus { text-decoration: none; color:black; }
-a:hover, a:active { text-decoration: none; color:black }
-
-#hometext {
-  font-size: 400;
-  font-family: monospace;
-  color: rgb(176,176,176);
-  text-align: center;
-  margin-top: 200px;
+#subtitle {
+  text-align: right;
+  font-size: 1.8vw;
+  color: black;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  display:inline-block;
+  margin-left: 25%;
 }
 
-#portfoliotab {
-  margin-right: 150px;
-  margin-left: 150px
+#hrmm {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30vw;
+  margin-top: 2%;
 }
 
-#contacttab {
-  margin-left: 150px;
+#skhrm {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40vw;
 }
 
-#tabtxt {
-  border: 1px;
-  border-radius: 3px;
-  border-style: solid;
-  border-color: rgb(176, 176, 176);
-  padding: 10px;
+body {
+  background-color: white;
 }
 
-.portfolio {
-  margin-left: 20px;
-  margin-top: 75px;
+.clicky {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: black;
+  margin-left: 5%;
+  margin-right: 5%;
+  cursor: pointer;
 }
 
-#morefolio {
-  display: none;
-  margin-left: 20px;
-  margin-top: 100px;
+#linque {
+  position: absolute;
+  bottom: 3vw;
+  color: black;
+  margin-left: 3%;
+  cursor:pointer;
 }
 
-#portfolioimg {
-  text-align: center;
-  margin-left: 40px;
-  border-radius: 10px;
+#hhhhghgh {
+  font-size: 3vw;
 }
 
-#portfolioimgr {
-  text-align: center;
-  margin-left: 40px;
-  border-radius: 10px;
-  margin-top: 40px;
-}
-
-#readmorebtn {
-  margin-left:580px;
-  background-color: rgb(245,245,245);
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  font-size: 1.8vw;
+  color: black;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   border: none;
-  color: rgb(176,176,176);
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  color: black;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  display: inline-block;
+  margin-left: 2%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content p {
+  color: black;
+  padding: 2%;
   text-decoration: none;
-  font-size: 16px;
-  margin-top: 50px;
+  display: block;
 }
 
-#aboutme {
-  margin-left: 450px;
-  font-size: 50;
-  font-family: "Avant Garde", "Avant Garde Gothic", "Open Sans", "Helvetica", Calibri, sans-serif;
-  color: rgb(176,176,176);
-  padding-top: 100px;
-}
+/* Change color of dropdown links on hover */
+.dropdown-content p:hover {cursor:pointer;}
 
-#contactme {
-  margin-left: 500px;
-  font-size: 50;
-  font-family: "Avant Garde", "Avant Garde Gothic", "Open Sans", "Helvetica", Calibri, sans-serif;
-  color: rgb(176,176,176);
-  padding-top: 100px;
-}
-
-#itsfree {
-  margin-left: 220px;
-}
-
-#pixelriver {
-  padding-top: 100px;
-  padding-left: 300px;
-}
-
-#contshr {
-  padding-left: 570px;
-}
-
-#contker {
-  padding-left: 50px;
-}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
