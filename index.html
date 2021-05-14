@@ -1,34 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>sam's website</title>
+  <title>PORTFOLIO</title>
   <link rel="stylesheet" href="pw.css"></link>
   <link rel="shortcut icon" type="image/x-icon" href="circle-cropped.png"></link>
 </head>
 
 <body>
 
-  <p id = "title">sam shelffo-mcgrath</p>
-  <p id = "title">about me</p>
-  <img src="smgr.PNG" id = "home_img"></img>
-  <p id = "abttext">hey, i'm sam! i'm a high school senior in new york city. i am  lorem ipsum lorem ipsum or whatever, write this in later<br>whaaaaaaaaaaaaat do i put in here<br>needs more text<br>figure this out later<br>yea im gay keep scrollin</p>
-  <p id = "navbar">
-    <button id = "navin" onclick = "goHome()">home</button>
-    <button id = "navin" onclick = "goPortfolio()">portfolio</button>
-    <button id = "navin" onclick = "goContact()">contact</button>
-  </p>
+  <div class="dropdown">
+  <p onclick="myFunction()" class="dropbtn">MEDIUM</p>
+  <div id="myDropdown" class="dropdown-content">
+    <p id="dwopdown" onclick="paint()">drawing/painting</p>
+    <p id="dwopdown" onclick="mono()">monotype</p>
+    <p id="dwopdown" onclick="film()">photography</p>
+    <p id="dwopdown" onClick="goSketch()">sketchbook</p>
+    </div>
+  </div>
+
+  <p id = "title">SAM SHELFFO-McGRATH</p>
+  <p id = "subtitle">portfolio</p>
+
+  <div class="fuckItWeBall">
+    <img id="hrmm" src="photo1.jpg"></img>
+  </div>
+
+  <div align="center" id = "hhhhghgh">
+    <div class="clicky" onclick="fuckGoBack()"><<</div>
+    <div class="clicky" onclick="upgrade()">>></div>
+  </div>
+
+  <div id="linque" onclick="samTime()">CONTACT</div>
+
 
 <script type = "text/javascript">
-  function goHome() {
-    window.location.href = "index.html";
+  var choosey = 0;
+  var chardonnay;
+
+  function upgrade() {
+    if(choosey < chardonnay.length-1) {
+      choosey += 1;
+      document.getElementById("hrmm").src = chardonnay[choosey];
+    }
   }
 
-  function goPortfolio() {
-    window.location.href = "pw_portfolio.html";
+  function fuckGoBack() {
+    if(choosey != 0) {
+      choosey -=1;
+      document.getElementById("hrmm").src = chardonnay[choosey];
+    }
   }
 
-  function goContact() {
-    window.location.href = "pw_contact.html";
+  function samTime() {
+    document.getElementById("linque").innerHTML = "email: sshelffomcgrath@gmail.com <br> instagram: sam.smgr";
+  }
+
+  function paint(){
+    document.getElementById("hrmm").src = "paint1.jpeg";
+    chardonnay = ["paint1.jpeg", "paint2.jpg", "paint3.jpg", "paint4.jpg", "paint5.jpg", "paint6.jpeg", "paint7.jpeg", "paint8.jpeg", "paint9.jpeg"];
+  }
+
+  function mono() {
+    document.getElementById("hrmm").src = "mono1.jpeg";
+    chardonnay = ["mono1.jpeg", "mono2.jpeg", "mono3.jpeg", "mono4.jpeg", "mono5.jpeg", "mono6.jpeg", "mono7.jpg", "mono8.jpg","mono9.jpg", "mono10.jpg"];
+  }
+
+  function film() {
+    document.getElementById("hrmm").src = "photo1.jpg";
+    chardonnay = ["photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg", "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg", "photo11.jpg", "photo12.jpg", "photo13.jpg", "photo14.jpg", "photo15.jpg", "photo16.jpg", "photo17.jpg", "photo18.jpg"];
+  }
+
+  function hw() {
+    document.getElementById("hrmm").src = "IMG_0676.jpeg";
+    chardonnay = ["IMG_0676.jpeg", "IMG_0678.jpeg", "IMG_0679.jpeg", "IMG_0681.jpeg"];
+  }
+
+  function goSketch() {
+    window.location.href = "sketchbook.html";
+  }
+
+    /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
   }
 </script>
 
