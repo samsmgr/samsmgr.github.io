@@ -11,10 +11,9 @@
   <div class="dropdown">
   <p onclick="myFunction()" class="dropbtn">MEDIUM</p>
   <div id="myDropdown" class="dropdown-content">
-    <p id="dwopdown" onclick="paint()">drawing/painting</p>
-    <p id="dwopdown" onclick="mono()">printmaking</p>
-    <p id="dwopdown" onclick="film()">photography</p>
-    <p id="dwopdown" onClick="goSketch()">sketchbook</p>
+    <p id="dwopdown" onclick="figure()">figure</p>
+    <p id="dwopdown" onclick="paint()">painting</p>
+    <p id="dwopdown" onclick="print()">printmaking</p>
     </div>
   </div>
 
@@ -60,12 +59,12 @@
     chardonnay = ["IMG_3005.jpg", "IMPG_3006.jpg", "IMG_4139.jpg", "IMG_4150.jpg", "IMG_4154.jpg"];
   }
 
-  function mono() {
+  function figure() {
     document.getElementById("hrmm").src = "mono1.jpeg";
     chardonnay = ["mono1.jpeg", "mono2.jpeg", "mono3.jpeg", "mono4.jpeg", "mono5.jpeg", "mono6.jpeg", "mono7.jpg", "mono8.jpg","mono9.jpg", "mono10.jpg"];
   }
 
-  function film() {
+  function print() {
     document.getElementById("hrmm").src = "photo1.jpg";
     chardonnay = ["photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg", "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg", "photo11.jpg", "photo12.jpg", "photo13.jpg", "photo14.jpg", "photo15.jpg", "photo16.jpg", "photo17.jpg", "photo18.jpg"];
   }
@@ -102,6 +101,7 @@
 
 </body>
 </html>
+
 
 
 
