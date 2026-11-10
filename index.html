@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samantha Shelffo-McGrath</title>
+  <title>Sam Shelffo-McGrath</title>
 
   <style>
-    /* Add your licensed Samoln font file to the same folder */
+
     @font-face {
-      font-family: "Bulky";
-      src: url("bulky.otf") format("otf");
-      font-display: swap;
+    font-family: "Bulky";
+    src: url("./bulky.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
     }
 
     * {
@@ -44,12 +46,17 @@
     }
 
     h1 {
-      font-family: "Bulky", Arial, sans-serif;
-      font-size: clamp(42px, 7vw, 82px);
-      font-weight: normal;
-      line-height: 1;
-      margin: 0 0 70px;
-    }
+    font-family: "Bulky", Arial, sans-serif;
+    font-size: clamp(42px, 7vw, 82px);
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+  
+    position: fixed;
+    left: 30px;
+    bottom: 25px;
+    z-index: 10;
+  }
 
     /* PROJECTS */
     .projects {
