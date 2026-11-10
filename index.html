@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Samantha Shelffo-McGrath</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #FAF4DC;
+      color: #1f1f1f;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Thin image across the top */
+    .header-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 70px 30px 100px;
+    }
+
+    h1 {
+      margin: 0 0 65px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: normal;
+      letter-spacing: -0.5px;
+    }
+
+    .projects {
+      border-top: 1px solid #1f1f1f;
+    }
+
+    details {
+      border-bottom: 1px solid #1f1f1f;
+      padding: 20px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .project-content {
+      max-width: 560px;
+      padding: 25px 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .project-content p {
+      margin: 0 0 16px;
+    }
+
+    @media (max-width: 600px) {
+      .header-image {
+        height: 110px;
+      }
+
+      main {
+        padding: 45px 22px 70px;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Replace header.jpg with your image -->
+  <img
+    src="header.jpg"
+    alt=""
+    class="header-image"
+  >
+
+  <main>
+
+    <h1>Samantha Shelffo-McGrath</h1>
+
+    <div class="projects">
+
+      <details>
+        <summary>Project One</summary>
+
+        <div class="project-content">
+          <p>
+            A short description of the project goes here.
+          </p>
+        </div>
+      </details>
+
+
+      <details>
+        <summary>Project Two</summary>
+
+        <div class="project-content">
+          <p>
+            Add a brief explanation of the project, your role,
+            or anything else you'd like to share.
+          </p>
+        </div>
+      </details>
+
+
+      <details>
+        <summary>Project Three</summary>
+
+        <div class="project-content">
+          <p>
+            Project details go here.
+          </p>
+        </div>
+      </details>
+
+
+      <details>
+        <summary>Project Four</summary>
+
+        <div class="project-content">
+          <p>
+            Project details go here.
+          </p>
+        </div>
+      </details>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
