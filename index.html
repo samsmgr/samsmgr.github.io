@@ -451,36 +451,24 @@
     /* MOBILE */
 
     @media (max-width: 600px) {
-
-      .header-image {
-        width: 100%;
-        height: auto;
-        margin-top: 6px;
+    
+      body::after {
+        height: 70px;
       }
-
-      main {
-        padding-top: 38px;
-        padding-bottom: 130px;
-      }
-
+    
       h1 {
         left: 20px;
-        bottom: 20px;
+        bottom: 18px;
         font-size: clamp(26px, 8vw, 40px);
       }
-
+    
+      main {
+        padding-top: 38px;
+        padding-bottom: 90px;
+      }
+    
       .projects {
-        margin-bottom: 90px;
-      }
-
-      summary {
-        font-size: 22px;
-      }
-
-      .project-title::before {
-        left: 4px;
-        top: 2px;
-        font-size: 1.3em;
+        margin-bottom: 0;
       }
     }
 
