@@ -161,9 +161,11 @@
     .project-title {
       position: relative;
       display: inline-block;
-      z-index: 1;
-
+    
       font-family: "WonderType", Arial, sans-serif;
+      color: #171717;
+    
+      transition: color 0.2s ease;
     }
 
 
@@ -171,38 +173,50 @@
 
     .project-title::before {
       content: attr(data-text);
-
+    
       position: absolute;
-
-      /* Offset behind foreground type */
-      left: -15px;
+      left: 5px;
       top: 2px;
-
-      /*
-        Keep this layer below the foreground text
-        but within the title's stacking context.
-      */
-      z-index: -1;
-
+    
       font-family: "Aboensis", sans-serif;
-
-      /* Larger than foreground */
       font-size: 1.35em;
-
-      /*
-        xxQueen only has the one supplied font file,
-        so increasing font-weight may not produce
-        a true heavier cut. Text stroke makes the
-        accent visibly bolder instead.
-      */
-      font-weight: normal;
-      -webkit-text-stroke: 0.6px #FFFFFF;
-
-      color: #FFFFFF;
-
       line-height: 1;
+    
+      color: transparent;
+      -webkit-text-stroke: 0.7px #171717;
+    
       white-space: nowrap;
       pointer-events: none;
+    
+      /* Tilt upward toward the right */
+      transform: rotate(-5deg);
+      transform-origin: left center;
+    
+      /* Normally behind WonderType */
+      z-index: -1;
+    
+      transition:
+        color 0.2s ease,
+        -webkit-text-stroke 0.2s ease,
+        transform 0.2s ease;
+    }
+    
+    
+    /* HOVER */
+    
+    /* WonderType turns white */
+    summary:hover .project-title {
+      color: #FAF4DC;
+    }
+    
+    /* Accent becomes black and comes forward */
+    summary:hover .project-title::before {
+      color: #171717;
+      -webkit-text-stroke: 0.7px #171717;
+    
+      z-index: 2;
+    
+      transform: rotate(-5deg);
     }
 
 
