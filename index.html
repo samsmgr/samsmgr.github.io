@@ -99,7 +99,6 @@
   h1:hover {
     color: #171717;
   }
-  }
 
     /* PROJECTS */
     .projects {
@@ -133,6 +132,21 @@
 
     details[open] summary::after {
       content: "−";
+    }
+
+    .project-title::before {
+      content: attr(data-text);
+      position: absolute;
+      left: 5px;
+      top: 4px;
+      z-index: -1;
+    
+      font-family: "Goozette", sans-serif;
+      font-size: 1.15em;
+      color: #171717;
+    
+      white-space: nowrap;
+      pointer-events: none;
     }
 
     .project-content {
@@ -178,7 +192,9 @@
     <div class="projects">
 
       <details>
-        <summary>Work</summary>
+        <summary>
+          <span class="project-title" data-text="Work">Work</span>
+        </summary>
         <div class="project-content">
           <p>
             Short description of the project goes here.
@@ -187,7 +203,9 @@
       </details>
 
       <details>
-        <summary>Projects</summary>
+        <summary>
+          <span class="project-title" data-text="Projects">Projects</span>
+        </summary>
         <div class="project-content">
           <p>
             Short description of the project goes here.
@@ -196,7 +214,9 @@
       </details>
 
       <details>
-        <summary>CV</summary>
+        <summary>
+          <span class="project-title" data-text="CV">CV</span>
+        </summary>
         <div class="project-content">
           <p>
             Short description of the project goes here.
