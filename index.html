@@ -467,5 +467,21 @@
 
   </main>
 
+  <script>
+  const dropdowns = document.querySelectorAll(".projects details");
+
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener("toggle", () => {
+      if (dropdown.open) {
+        dropdowns.forEach((otherDropdown) => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.open = false;
+          }
+        });
+      }
+    });
+  });
+</script>
+  
 </body>
 </html>
