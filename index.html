@@ -248,32 +248,35 @@
       margin: 0;
     }
 
-    .project-links a {
-      display: inline-block;
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
     
-      font-family: "WonderType", Arial, sans-serif;
-      font-size: 15px;
+    .project-links a {
+      display: block;
     
       color: #171717;
       text-decoration: none;
     
-      border: 1.5px solid #171717;
-      border-radius: 0;
+      border: 1px solid #171717;
+      border-radius: 100px;
     
-      padding: 9px 16px;
+      padding: 8px 16px;
     
-      background: #ffffff;
+      font-family: "WonderType", Arial, sans-serif;
+      font-size: 14px;
     
       transition:
         background-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+        color 0.2s ease;
     }
     
     .project-links a:hover {
-      background: #171717;
+      background-color: #171717;
       color: #ffffff;
-      transform: translate(-2px, -2px);
     }
 
 
@@ -357,22 +360,22 @@
         <div class="project-content">
           <div class="project-links">
       
-            <a href="https://yourwebsite1.com"
+            <a href="https://samsmgr.github.io/blues"
                target="_blank"
                rel="noopener noreferrer">
-              Website One
+              Blues
             </a>
       
-            <a href="https://yourwebsite2.com"
+            <a href="https://samsmgr.github.io/barchart"
                target="_blank"
                rel="noopener noreferrer">
-              Website Two
+              Bars
             </a>
       
-            <a href="https://yourwebsite3.com"
+            <a href="https://samsmgr.github.io/degenerates"
                target="_blank"
                rel="noopener noreferrer">
-              Website Three
+              Degenerates
             </a>
       
           </div>
