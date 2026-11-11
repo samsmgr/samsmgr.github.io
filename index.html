@@ -340,6 +340,95 @@
       z-index: -1;
     }
 
+    /* WORK IMAGE SCROLLER */
+
+    .work-section .details-inner {
+      width: 100%;
+    }
+    
+    .work-scroller {
+      display: flex;
+      align-items: center;
+    
+      gap: 28px;
+    
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+    
+      padding: 25px 0 30px;
+    
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    
+      cursor: grab;
+    }
+    
+    .work-scroller::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .work-scroller:active {
+      cursor: grabbing;
+    }
+    
+    
+    /* INDIVIDUAL WORK ITEMS */
+    
+    .work-item {
+      flex: 0 0 auto;
+    
+      width: min(55vw, 500px);
+    
+      margin: 0;
+    
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    
+    /* IMAGES */
+    
+    .work-item img {
+      display: block;
+    
+      width: 100%;
+      height: auto;
+    
+      max-height: 55vh;
+    
+      object-fit: contain;
+    }
+    
+    
+    /* CAPTIONS */
+    
+    .work-item figcaption {
+      margin-top: 8px;
+    
+      font-family: "WonderType", Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.3;
+    
+      color: #171717;
+    }
+    
+    
+    /* MOBILE */
+    
+    @media (max-width: 600px) {
+    
+      .work-scroller {
+        gap: 18px;
+        padding: 20px 0 25px;
+      }
+    
+      .work-item {
+        width: 78vw;
+      }
+    }
+
     /* MOBILE */
 
     @media (max-width: 600px) {
@@ -393,21 +482,37 @@
 
     <div class="projects">
 
-      <details>
+      <details class="work-section">
         <summary>
-          <span
-            class="project-title"
-            data-text="Work"
-          >Work</span>
+          <span class="project-title" data-text="Work">Work</span>
         </summary>
-
-        <div class="project-content">
-          <p>
-            Short description of the project goes here.
-          </p>
+      
+        <div class="details-inner">
+          <div class="work-scroller">
+      
+            <figure class="work-item">
+              <img src="work-1.jpg" alt="Description of project one">
+              <figcaption>Project One</figcaption>
+            </figure>
+      
+            <figure class="work-item">
+              <img src="work-2.jpg" alt="Description of project two">
+              <figcaption>Project Two</figcaption>
+            </figure>
+      
+            <figure class="work-item">
+              <img src="work-3.jpg" alt="Description of project three">
+              <figcaption>Project Three</figcaption>
+            </figure>
+      
+            <figure class="work-item">
+              <img src="work-4.jpg" alt="Description of project four">
+              <figcaption>Project Four</figcaption>
+            </figure>
+      
+          </div>
         </div>
       </details>
-
 
       <details>
         <summary>
@@ -470,7 +575,7 @@
 
   </main>
 
-  <script>
+<script>
   const dropdowns = document.querySelectorAll(".projects details");
 
   dropdowns.forEach((dropdown) => {
@@ -484,6 +589,61 @@
       }
     });
   });
+
+
+  /* INFINITE WORK GALLERY */
+
+  const scroller = document.querySelector(".work-scroller");
+
+  if (scroller) {
+    const originalItems = Array.from(scroller.children);
+
+    /* Duplicate the gallery before and after the originals */
+    originalItems.forEach((item) => {
+      scroller.appendChild(item.cloneNode(true));
+    });
+
+    originalItems
+      .slice()
+      .reverse()
+      .forEach((item) => {
+        scroller.insertBefore(
+          item.cloneNode(true),
+          scroller.firstChild
+        );
+      });
+
+    function getSetWidth() {
+      let width = 0;
+      const gap = parseFloat(
+        getComputedStyle(scroller).gap
+      ) || 0;
+
+      originalItems.forEach((item) => {
+        width += item.getBoundingClientRect().width + gap;
+      });
+
+      return width;
+    }
+
+    function centerOnOriginals() {
+      scroller.scrollLeft = getSetWidth();
+    }
+
+    window.addEventListener("load", centerOnOriginals);
+
+    scroller.addEventListener("scroll", () => {
+      const setWidth = getSetWidth();
+
+      if (scroller.scrollLeft < setWidth * 0.5) {
+        scroller.scrollLeft += setWidth;
+      }
+
+      if (scroller.scrollLeft > setWidth * 1.5) {
+        scroller.scrollLeft -= setWidth;
+      }
+    });
+  }
 </script>
   
 </body>
