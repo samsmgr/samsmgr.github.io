@@ -7,33 +7,35 @@
 
   <style>
 
-    @font-face {
-    font-family: "Bulky";
-    src: url("./bulky.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    }
+    /* FONTS */
 
     @font-face {
-    font-family: "WonderType";
-    src: url("WonderType-Regular.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    }
-
-    @font-face {
-      font-family: "xxQueen";
-      src: url("xxQueen-basic.ttf") format("truetype");
+      font-family: "Bulky";
+      src: url("./bulky.otf") format("opentype");
       font-weight: normal;
       font-style: normal;
       font-display: swap;
     }
-    
+
+    @font-face {
+      font-family: "WonderType";
+      src: url("./WonderType-Regular.otf") format("opentype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "xxQueen";
+      src: url("./xxQueen-basic.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     @font-face {
       font-family: "Goozette";
-      src: url("goozette.otf") format("opentype");
+      src: url("./goozette.otf") format("opentype");
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -41,11 +43,14 @@
 
     @font-face {
       font-family: "FifteenTwenty";
-      src: url("FifteenTwenty-DemiOblique.otf") format("opentype");
+      src: url("./FifteenTwenty-DemiOblique.otf") format("opentype");
       font-weight: normal;
       font-style: normal;
       font-display: swap;
     }
+
+
+    /* GENERAL */
 
     * {
       box-sizing: border-box;
@@ -62,47 +67,62 @@
       font-family: "WonderType", Arial, sans-serif;
     }
 
-    /* THIN IMAGE HEADER */
+
+    /* HEADER IMAGE */
+
     .header-image {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
+
+      /* Tiny strip of background above image */
+      margin-top: 6px;
     }
 
+
     /* MAIN CONTENT */
+
     main {
       width: min(90%, 900px);
       margin: 0 auto;
+
+      /* Extra bottom space prevents content
+         from disappearing behind fixed title */
       padding: 55px 0 150px;
     }
 
+
+    /* NAME */
+
     h1 {
-    font-family: "Bulky", Arial, sans-serif;
-    font-size: clamp(30px, 5vw, 58px);
-    font-weight: normal;
-    line-height: 1;
-    margin: 0;
-  
-    position: fixed;
-    left: 30px;
-    bottom: 25px;
-    z-index: 10;
+      font-family: "Bulky", Arial, sans-serif;
+      font-size: clamp(28px, 4.5vw, 52px);
+      font-weight: normal;
+      line-height: 1;
+      margin: 0;
 
-      /* Outline appearance */
-    color: transparent;
-    -webkit-text-stroke: 1.5px #171717;
+      position: fixed;
+      left: 30px;
+      bottom: 25px;
+      z-index: 10;
 
-    /* Smooth hover */
-    transition: color 0.2s ease;
-  }
+      /* Outline */
+      color: transparent;
+      -webkit-text-stroke: 1.5px #171717;
 
-  h1:hover {
-    color: #171717;
-  }
+      transition: color 0.2s ease;
+    }
+
+    h1:hover {
+      color: #171717;
+    }
+
 
     /* PROJECTS */
+
     .projects {
       border-top: 1px solid #171717;
+      margin-bottom: 110px;
     }
 
     details {
@@ -112,11 +132,14 @@
     summary {
       list-style: none;
       cursor: pointer;
+
       padding: 17px 0;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+
       font-size: 25px;
     }
 
@@ -124,34 +147,77 @@
       display: none;
     }
 
+
+    /* PROJECT TITLE */
+
+    .project-title {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+
+      font-family: "WonderType", Arial, sans-serif;
+    }
+
+
+    /* xxQUEEN ACCENT LAYER */
+
+    .project-title::before {
+      content: attr(data-text);
+
+      position: absolute;
+
+      /* Offset behind foreground type */
+      left: 5px;
+      top: 2px;
+
+      /*
+        Keep this layer below the foreground text
+        but within the title's stacking context.
+      */
+      z-index: -1;
+
+      font-family: "xxQueen", sans-serif;
+
+      /* Larger than foreground */
+      font-size: 1.35em;
+
+      /*
+        xxQueen only has the one supplied font file,
+        so increasing font-weight may not produce
+        a true heavier cut. Text stroke makes the
+        accent visibly bolder instead.
+      */
+      font-weight: normal;
+      -webkit-text-stroke: 0.6px #171717;
+
+      color: #171717;
+
+      line-height: 1;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+
+    /* PLUS / MINUS */
+
     summary::after {
       content: "+";
       font-size: 20px;
       font-weight: 300;
+      flex-shrink: 0;
     }
 
     details[open] summary::after {
       content: "−";
     }
 
-    .project-title::before {
-      content: attr(data-text);
-      position: absolute;
-      left: 5px;
-      top: 4px;
-      z-index: -1;
-    
-      font-family: "Goozette", sans-serif;
-      font-size: 1.15em;
-      color: #171717;
-    
-      white-space: nowrap;
-      pointer-events: none;
-    }
+
+    /* PROJECT BODY */
 
     .project-content {
       max-width: 650px;
       padding: 5px 0 28px;
+
       font-size: 14px;
       line-height: 1.6;
     }
@@ -160,26 +226,48 @@
       margin: 0;
     }
 
+
+    /* MOBILE */
+
     @media (max-width: 600px) {
+
       .header-image {
         width: 100%;
         height: auto;
+        margin-top: 6px;
       }
 
       main {
         padding-top: 38px;
+        padding-bottom: 130px;
       }
 
       h1 {
-        margin-bottom: 50px;
+        left: 20px;
+        bottom: 20px;
+        font-size: clamp(26px, 8vw, 40px);
+      }
+
+      .projects {
+        margin-bottom: 90px;
+      }
+
+      summary {
+        font-size: 22px;
+      }
+
+      .project-title::before {
+        left: 4px;
+        top: 2px;
+        font-size: 1.3em;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- Replace header.jpg with your image -->
   <img
     class="header-image"
     src="header.png"
@@ -194,8 +282,12 @@
 
       <details>
         <summary>
-          <span class="project-title" data-text="Work">Work</span>
+          <span
+            class="project-title"
+            data-text="Work"
+          >Work</span>
         </summary>
+
         <div class="project-content">
           <p>
             Short description of the project goes here.
@@ -203,10 +295,15 @@
         </div>
       </details>
 
+
       <details>
         <summary>
-          <span class="project-title" data-text="Projects">Projects</span>
+          <span
+            class="project-title"
+            data-text="Projects"
+          >Projects</span>
         </summary>
+
         <div class="project-content">
           <p>
             Short description of the project goes here.
@@ -214,10 +311,15 @@
         </div>
       </details>
 
+
       <details>
         <summary>
-          <span class="project-title" data-text="CV">CV</span>
+          <span
+            class="project-title"
+            data-text="CV"
+          >CV</span>
         </summary>
+
         <div class="project-content">
           <p>
             Short description of the project goes here.
