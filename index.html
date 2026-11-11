@@ -18,6 +18,14 @@
     }
 
     @font-face {
+      font-family: "Aboensis";
+      src: url("Aboensis-Regular.otf") format("opentype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
       font-family: "WonderType";
       src: url("./WonderType-Regular.otf") format("opentype");
       font-weight: normal;
@@ -159,7 +167,7 @@
     }
 
 
-    /* xxQUEEN ACCENT LAYER */
+    /* ACCENT LAYER */
 
     .project-title::before {
       content: attr(data-text);
@@ -167,7 +175,7 @@
       position: absolute;
 
       /* Offset behind foreground type */
-      left: 5px;
+      left: 15px;
       top: 2px;
 
       /*
@@ -176,7 +184,7 @@
       */
       z-index: -1;
 
-      font-family: "xxQueen", sans-serif;
+      font-family: "Aboensis-Regular", sans-serif;
 
       /* Larger than foreground */
       font-size: 1.35em;
@@ -190,7 +198,7 @@
       font-weight: normal;
       -webkit-text-stroke: 0.6px #171717;
 
-      color: #171717;
+      color: #FFFFFF;
 
       line-height: 1;
       white-space: nowrap;
