@@ -212,12 +212,14 @@
     /* Regular WonderType becomes white */
     summary:hover .project-title {
       color: #ffffff;
+      z-index: -1;
     }
     
     /* Accent becomes black */
     summary:hover .project-title::before {
       color: #171717;
       -webkit-text-stroke-color: #171717;
+      z-index: 1;
     }
 
     /* PLUS / MINUS */
