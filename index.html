@@ -93,10 +93,13 @@
     main {
       width: min(90%, 900px);
       margin: 0 auto;
-
-      /* Extra bottom space prevents content
-         from disappearing behind fixed title */
-      padding: 55px 0 150px;
+      padding: 40px 0 150px;
+    
+      min-height: calc(100vh - 120px);
+    
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
 
