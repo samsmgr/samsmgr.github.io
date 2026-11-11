@@ -342,7 +342,7 @@
 
 /* WORK GALLERY */
 
-.work-gallery {
+.work-scroller {
   /* Break gallery out of the 900px main container */
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -360,11 +360,11 @@
   overscroll-behavior-x: contain;
 }
 
-.work-gallery::-webkit-scrollbar {
+.work-scroller::-webkit-scrollbar {
   display: none;
 }
 
-.work-gallery figure {
+.work-scroller figure {
   flex: 0 0 auto;
   margin: 0;
 
@@ -374,7 +374,7 @@
   scroll-snap-align: start;
 }
 
-.work-gallery img {
+.work-scroller img {
   display: block;
 
   width: 100%;
@@ -383,7 +383,7 @@
   object-fit: cover;
 }
 
-.work-gallery figcaption {
+.work-scroller figcaption {
   margin-top: 7px;
   padding: 0 3px;
 
