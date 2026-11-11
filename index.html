@@ -157,7 +157,7 @@
 
 
     /* PROJECT TITLE */
-
+    
     .project-title {
       position: relative;
       display: inline-block;
@@ -165,60 +165,60 @@
       font-family: "WonderType", Arial, sans-serif;
       color: #171717;
     
+      z-index: 1;
+    
       transition: color 0.2s ease;
     }
-
-
-    /* ACCENT LAYER */
-
+    
+    
+    /* ACCENT */
+    
     .project-title::before {
       content: attr(data-text);
     
       position: absolute;
-      left: -15px;
+      left: 5px;
       top: 2px;
     
       font-family: "Aboensis", sans-serif;
       font-size: 1.35em;
+      font-weight: normal;
       line-height: 1;
-    
-      color: #FFFFFF;
-      -webkit-text-stroke: 0.7px #FFFFFF;
-    
       white-space: nowrap;
-      pointer-events: none;
+    
+      /* WHITE and visible before hover */
+      color: #ffffff;
+    
+      /* Makes accent heavier while remaining white */
+      -webkit-text-stroke: 0.7px #ffffff;
     
       /* Tilt upward toward the right */
-      transform: rotate(-8deg);
+      transform: rotate(-5deg);
       transform-origin: left center;
     
-      /* Normally behind WonderType */
+      /* Behind regular text initially */
       z-index: -1;
+    
+      pointer-events: none;
     
       transition:
         color 0.2s ease,
-        -webkit-text-stroke 0.2s ease,
-        transform 0.2s ease;
+        -webkit-text-stroke 0.2s ease;
     }
     
     
     /* HOVER */
     
-    /* WonderType turns white */
+    /* Regular WonderType becomes white */
     summary:hover .project-title {
-      color: #FFFFFF;
+      color: #ffffff;
     }
     
-    /* Accent becomes black and comes forward */
+    /* Accent becomes black */
     summary:hover .project-title::before {
       color: #171717;
-      -webkit-text-stroke: 0.7px #171717;
-    
-      z-index: 2;
-    
-      transform: rotate(-8deg);
+      -webkit-text-stroke-color: #171717;
     }
-
 
     /* PLUS / MINUS */
 
