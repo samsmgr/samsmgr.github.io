@@ -93,7 +93,7 @@
     main {
       width: min(90%, 900px);
       margin: 0 auto;
-      padding: 40px 0 150px;
+      padding: 40px 0 calc(105px + env(safe-area-inset-bottom));
     
       min-height: calc(100vh - 120px);
     
@@ -101,24 +101,6 @@
       flex-direction: column;
       justify-content: center;
     }
-
-    /* FIXED BOTTOM STRIP */
-    
-    body::after {
-      content: "";
-      position: fixed;
-    
-      left: 0;
-      right: 0;
-      bottom: 0;
-    
-      height: 85px;
-    
-      background: #D5CFBB;
-    
-      z-index: 90;
-      pointer-events: none;
-    }
     
     /* FIXED BOTTOM STRIP */
     
@@ -128,9 +110,9 @@
     
       left: 0;
       right: 0;
-      bottom: 0;
+      bottom: -2px;
     
-      height: 105px;
+      height: calc(105px + env(safe-area-inset-bottom));
     
       background: #FAF4DC;
     
@@ -170,7 +152,7 @@
 
     .projects {
       border-top: 1px solid #171717;
-      margin-bottom: 110px;
+      margin-bottom: 0;
     }
 
     details {
@@ -430,42 +412,23 @@
 }
 
 
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-  .work-gallery {
-    gap: 8px;
-    padding: 14px 0 22px;
-  }
-
-  .work-gallery figure {
-    width: 84vw;
-  }
-
-  .work-gallery img {
-    height: 300px;
-  }
-}
-
     /* MOBILE */
 
     @media (max-width: 600px) {
+      .header-image {
+        width: 100%;
+        height: auto;
+        margin-top: 6px;
+      }
     
       body::after {
-        bottom: 0;
-    
-        height: calc(60px + env(safe-area-inset-bottom));
-    
-        /* Extend through iPhone bottom safe area */
-        padding-bottom: env(safe-area-inset-bottom);
-    
-        background: #FAF4DC;
+        bottom: -2px;
+        height: calc(70px + env(safe-area-inset-bottom));
       }
     
       h1 {
         left: 20px;
-        bottom: calc(18px + env(safe-area-inset-bottom));
+        bottom: calc(17px + env(safe-area-inset-bottom));
         font-size: clamp(26px, 8vw, 40px);
       }
     
@@ -476,6 +439,29 @@
     
       .projects {
         margin-bottom: 0;
+      }
+    
+      summary {
+        font-size: 22px;
+      }
+    
+      .project-title::before {
+        left: -12px;
+        top: 3px;
+        font-size: 1.3em;
+      }
+    
+      .work-scroller {
+        gap: 8px;
+        padding: 14px 0 22px;
+      }
+    
+      .work-scroller figure {
+        width: 84vw;
+      }
+    
+      .work-scroller img {
+        height: 300px;
       }
     }
 
@@ -584,7 +570,7 @@
       </details>
 
     </div>
-  
+  </main>
 <script>
   const dropdowns = document.querySelectorAll(".projects details");
 
