@@ -105,29 +105,30 @@
 
     /* NAME */
 
-    h1 {
-      font-family: "Bulky", Arial, sans-serif;
-      font-size: clamp(28px, 4.5vw, 52px);
-      font-weight: normal;
-      line-height: 1;
-      margin: 0;
-
-      position: fixed;
-      left: 30px;
-      bottom: 25px;
-      z-index: 10;
-
-      /* Outline */
-      color: transparent;
-      -webkit-text-stroke: 1.5px #171717;
-
-      transition: color 0.2s ease;
-    }
-
-    h1:hover {
-      color: #171717;
-    }
-
+  .site-footer {
+    width: 100%;
+    background: #D5CFBB;
+    padding: 18px 30px 22px;
+  }
+  
+  .site-footer h1 {
+    position: static;
+    margin: 0;
+  
+    font-family: "Bulky", Arial, sans-serif;
+    font-size: clamp(28px, 4.5vw, 52px);
+    font-weight: normal;
+    line-height: 1;
+  
+    color: transparent;
+    -webkit-text-stroke: 1.5px #171717;
+  
+    transition: color 0.2s ease;
+  }
+  
+  .site-footer h1:hover {
+    color: #171717;
+  }
 
     /* PROJECTS */
 
@@ -460,8 +461,6 @@
 
   <main>
 
-    <h1>Sam Shelffo-McGrath</h1>
-
     <div class="projects">
 
       <details class="work-section">
@@ -556,7 +555,10 @@
     </div>
 
   </main>
-
+  <footer class="site-footer">
+    <h1>Sam Shelffo-McGrath</h1>
+  </footer>
+  
 <script>
   const dropdowns = document.querySelectorAll(".projects details");
 
