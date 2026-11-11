@@ -453,7 +453,14 @@
     @media (max-width: 600px) {
     
       body::after {
-        height: 70px;
+        bottom: 0;
+    
+        height: calc(70px + env(safe-area-inset-bottom));
+    
+        /* Extend through iPhone bottom safe area */
+        padding-bottom: env(safe-area-inset-bottom);
+    
+        background: #FAF4DC;
       }
     
       h1 {
