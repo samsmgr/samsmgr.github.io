@@ -102,33 +102,69 @@
       justify-content: center;
     }
 
-
+    /* FIXED BOTTOM STRIP */
+    
+    body::after {
+      content: "";
+      position: fixed;
+    
+      left: 0;
+      right: 0;
+      bottom: 0;
+    
+      height: 85px;
+    
+      background: #D5CFBB;
+    
+      z-index: 90;
+      pointer-events: none;
+    }
+    
+    /* FIXED BOTTOM STRIP */
+    
+    body::after {
+      content: "";
+      position: fixed;
+    
+      left: 0;
+      right: 0;
+      bottom: 0;
+    
+      height: 85px;
+    
+      background: #D5CFBB;
+    
+      z-index: 90;
+      pointer-events: none;
+    }
+    
+    
     /* NAME */
-
-  .site-footer {
-    width: 100%;
-    background: #D5CFBB;
-    padding: 18px 30px 22px;
-  }
-  
-  .site-footer h1 {
-    position: static;
-    margin: 0;
-  
-    font-family: "Bulky", Arial, sans-serif;
-    font-size: clamp(28px, 4.5vw, 52px);
-    font-weight: normal;
-    line-height: 1;
-  
-    color: transparent;
-    -webkit-text-stroke: 1.5px #171717;
-  
-    transition: color 0.2s ease;
-  }
-  
-  .site-footer h1:hover {
-    color: #171717;
-  }
+    
+    h1 {
+      position: fixed;
+    
+      left: 30px;
+      bottom: 22px;
+    
+      margin: 0;
+    
+      font-family: "Bulky", Arial, sans-serif;
+      font-size: clamp(28px, 4.5vw, 52px);
+      font-weight: normal;
+      line-height: 1;
+    
+      color: transparent;
+      -webkit-text-stroke: 1.5px #171717;
+    
+      z-index: 100;
+    
+      transition: color 0.2s ease;
+    }
+    
+    h1:hover {
+      color: #171717;
+    }
 
     /* PROJECTS */
 
@@ -460,7 +496,7 @@
   >
 
   <main>
-
+    <h1>Sam Shelffo-McGrath</h1>
     <div class="projects">
 
       <details class="work-section">
@@ -553,11 +589,6 @@
       </details>
 
     </div>
-
-  </main>
-  <footer class="site-footer">
-    <h1>Sam Shelffo-McGrath</h1>
-  </footer>
   
 <script>
   const dropdowns = document.querySelectorAll(".projects details");
