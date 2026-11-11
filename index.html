@@ -340,94 +340,76 @@
       z-index: -1;
     }
 
-    /* WORK IMAGE SCROLLER */
+/* WORK GALLERY */
 
-    .work-section .details-inner {
-      width: 100%;
-    }
-    
-    .work-scroller {
-      display: flex;
-      align-items: center;
-    
-      gap: 28px;
-    
-      width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
-    
-      padding: 25px 0 30px;
-    
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-    
-      cursor: grab;
-    }
-    
-    .work-scroller::-webkit-scrollbar {
-      display: none;
-    }
-    
-    .work-scroller:active {
-      cursor: grabbing;
-    }
-    
-    
-    /* INDIVIDUAL WORK ITEMS */
-    
-    .work-item {
-      flex: 0 0 auto;
-    
-      width: min(55vw, 500px);
-    
-      margin: 0;
-    
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    
-    
-    /* IMAGES */
-    
-    .work-item img {
-      display: block;
-    
-      width: 100%;
-      height: auto;
-    
-      max-height: 55vh;
-    
-      object-fit: contain;
-    }
-    
-    
-    /* CAPTIONS */
-    
-    .work-item figcaption {
-      margin-top: 8px;
-    
-      font-family: "WonderType", Arial, sans-serif;
-      font-size: 13px;
-      line-height: 1.3;
-    
-      color: #171717;
-    }
-    
-    
-    /* MOBILE */
-    
-    @media (max-width: 600px) {
-    
-      .work-scroller {
-        gap: 18px;
-        padding: 20px 0 25px;
-      }
-    
-      .work-item {
-        width: 78vw;
-      }
-    }
+.work-gallery {
+  /* Break gallery out of the 900px main container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  display: flex;
+  gap: 12px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 18px 0 26px;
+
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.work-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.work-gallery figure {
+  flex: 0 0 auto;
+  margin: 0;
+
+  /* Large horizontal images */
+  width: min(72vw, 700px);
+
+  scroll-snap-align: start;
+}
+
+.work-gallery img {
+  display: block;
+
+  width: 100%;
+  height: 420px;
+
+  object-fit: cover;
+}
+
+.work-gallery figcaption {
+  margin-top: 7px;
+  padding: 0 3px;
+
+  font-family: "WonderType", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .work-gallery {
+    gap: 8px;
+    padding: 14px 0 22px;
+  }
+
+  .work-gallery figure {
+    width: 84vw;
+  }
+
+  .work-gallery img {
+    height: 300px;
+  }
+}
 
     /* MOBILE */
 
