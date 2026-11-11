@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sam Shelffo-McGrath</title>
 
   <style>
@@ -455,7 +455,7 @@
       body::after {
         bottom: 0;
     
-        height: calc(70px + env(safe-area-inset-bottom));
+        height: calc(60px + env(safe-area-inset-bottom));
     
         /* Extend through iPhone bottom safe area */
         padding-bottom: env(safe-area-inset-bottom);
@@ -465,13 +465,13 @@
     
       h1 {
         left: 20px;
-        bottom: 18px;
+        bottom: calc(18px + env(safe-area-inset-bottom));
         font-size: clamp(26px, 8vw, 40px);
       }
     
       main {
         padding-top: 38px;
-        padding-bottom: 90px;
+        padding-bottom: calc(90px + env(safe-area-inset-bottom));
       }
     
       .projects {
