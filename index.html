@@ -470,11 +470,18 @@
 
 <body>
 
-  <img
-    class="header-image"
-    src="header.png"
-    alt=""
-  >
+  <picture>
+    <source
+      media="(max-width: 600px)"
+      srcset="mobileheader.png"
+    >
+  
+    <img
+      class="header-image"
+      src="header.png"
+      alt=""
+    >
+  </picture>
 
   <main>
     <h1>Sam Shelffo-McGrath</h1>
